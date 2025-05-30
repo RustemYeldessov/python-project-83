@@ -4,3 +4,13 @@ authors = [
 ]
 name = "hexlet-code"
 version = "0.1.0"
+dependencies = [
+    "flask",
+    "python-dotenv",
+    "gunicorn"
+]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["uv"]
+build-backend = "setuptools.build_meta"

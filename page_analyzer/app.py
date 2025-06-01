@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
-from page_analyzer import db_manager as db
+# from page_analyzer import db_manager as db
 
 load_dotenv()
 

@@ -15,3 +15,5 @@ render-start:
 build:
 	./build.sh
 
+lint:
+	uv run ruff check page_analyzer

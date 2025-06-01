@@ -12,7 +12,7 @@ dependencies = [
 requires-python = ">=3.10"
 
 [build-system]
-requires = ["uv"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.poetry.dependencies]

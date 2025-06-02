@@ -1,5 +1,5 @@
 import os
-from unicodedata import normalize
+# from unicodedata import normalize
 from flask import Flask, render_template, redirect, url_for, flash, request
 from dotenv import load_dotenv
 from psycopg import connect
@@ -33,7 +33,10 @@ def add_url():
     created_at = datetime.now()
 
     with connection.cursor() as cursor:
-        cursor.execute('SELECT id FROM urls WHERE name = %s', (normalized_url,))
+        cursor.execute(
+            'SELECT id FROM urls WHERE name = %s',
+            (normalized_url,)
+        )
         existing = cursor.fetchone()
         if existing:
             flash('Страница уже существует', 'info')
@@ -52,7 +55,9 @@ def add_url():
 @app.route('/urls')
 def list_urls():
     with connection.cursor() as cursor:
-        cursor.execute('SELECT id, name, created_at FROM urls ORDER BY id DESC')
+        cursor.execute(
+            'SELECT id, name, created_at FROM urls ORDER BY id DESC'
+        )
         urls = cursor.fetchall()
     return render_template('urls.html', urls=urls)
 
@@ -60,9 +65,11 @@ def list_urls():
 @app.route('/urls/<int:id>')
 def show_url(id):
     with connection.cursor() as cursor:
-        cursor.execute('SELECT id, name, created_at FROM urls WHERE id = %s', (id,))
+        cursor.execute(
+            'SELECT id, name, created_at FROM urls WHERE id = %s',
+            (id,)
+        )
         url = cursor.fetchone()
     if url is None:
         return 'URL не найден', 404
     return render_template('url_detail.html', url=url)
-

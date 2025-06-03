@@ -8,11 +8,44 @@
 <body class="bg-light">
 <div class="container py-5">
     <h1 class="mb-4">Информация о сайте</h1>
-    <ul class="list-group">
+
+    <ul class="list-group mb-4">
         <li class="list-group-item"><strong>ID:</strong> {{ url[0] }}</li>
         <li class="list-group-item"><strong>Имя:</strong> {{ url[1] }}</li>
         <li class="list-group-item"><strong>Дата добавления:</strong> {{ url[2] }}</li>
     </ul>
+
+    <form action="{{ url_for('check_url', id=url[0]) }}" method="post" class="mb-4">
+        <button type="submit" class="btn btn-primary" data-test="check-button">ПРОВЕРИТЬ</button>
+    </form>
+
+    {% if checks %}
+    <h2 class="mb-3">Проверки</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Код ответа</th>
+            <th>h1</th>
+            <th>title</th>
+            <th>description</th>
+            <th>Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for check in checks %}
+        <tr>
+            <td>{{ check[0] }}</td>  <!-- id -->
+            <td>{{ check[2] or '' }}</td>  <!-- status_code -->
+            <td>{{ check[3] or '' }}</td>  <!-- h1 -->
+            <td>{{ check[4] or '' }}</td>  <!-- title -->
+            <td>{{ check[5] or '' }}</td>  <!-- description -->
+            <td>{{ check[6] }}</td>  <!-- created_at -->
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
 </div>
 </body>
 </html>

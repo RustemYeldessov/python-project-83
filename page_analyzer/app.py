@@ -73,9 +73,17 @@ def show_url(id):
             (id,)
         )
         url = cursor.fetchone()
-    if url is None:
-        return 'URL не найден', 404
-    return render_template('url_detail.html', url=url)
+        if url is None:
+            return 'URL не найден', 404
+
+        cursor.execute(
+            'SELECT id, status_code, h1, title, description, created_at '
+            'FROM url_checks WHERE url_id = %s ORDER BY id DESC',
+            (id,)
+        )
+        checks = cursor.fetchall()
+
+    return render_template('url_detail.html', url=url, checks=checks)
 
 
 @app.post('/urls/<int:id>/checks')

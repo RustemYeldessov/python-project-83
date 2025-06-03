@@ -1,10 +1,10 @@
 import os
-from venv import create
+# from venv import create
 
 # from unicodedata import normalize
 from flask import Flask, render_template, redirect, url_for, flash, request
 from dotenv import load_dotenv
-from jinja2.filters import do_last
+# from jinja2.filters import do_last
 from psycopg import connect
 from validators import url as validate_url
 from urllib.parse import urlparse
@@ -81,11 +81,10 @@ def show_url(id):
 @app.post('/urls/<int:id>/checks')
 def check_url(id):
     created_at = datetime.now()
-    with connect(DATABASE_URL) as conn:
-        with conn.cursor() as cur:
-            cur.execute(
-                'INSERT INTO url_checks (url_id, created_at) VALUES (%s, %s)',
-                (id, created_at)
-            )
+    with connection.cursor() as cur:
+        cur.execute(
+            'INSERT INTO url_checks (url_id, created_at) VALUES (%s, %s)',
+            (id, created_at)
+        )
     flash('Проверка добавлена', 'success')
     return redirect(url_for('show_url', id=id))

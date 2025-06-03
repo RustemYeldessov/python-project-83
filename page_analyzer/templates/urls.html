@@ -11,17 +11,19 @@
      <table class="table table-border table-striped">
          <thead>
          <tr>
-             <th>ID</th>
-             <th>Имя</th>
-             <th>Дата создания</th>
+             <th>ID:</th>
+             <th>Имя:</th>
+             <th>Дата создания:</th>
+             <th>Последняя проверка:</th>
          </tr>
          </thead>
          <tbody>
          {% for url in urls %}
             <tr>
                 <td>{{ url[0] }}</td>
-                <td><a href="{{ url_for('show_url, id=url[0])}} ">{{ url[1] }}</a> </td>
+                <td><a href="{{ url_for('show_url', id=url[0]) }}">{{ url[1] }}</a></td>
                 <td>{{ url[2] }}</td>
+                <td>{{ url[3] or '-' }}</td>
             </tr>
          {% endfor %}
          </tbody>

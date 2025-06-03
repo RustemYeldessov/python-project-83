@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="" />
+    <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_analyzer/templates/urls.html" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/templates/urls.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

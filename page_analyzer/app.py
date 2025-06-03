@@ -1,7 +1,10 @@
 import os
+from venv import create
+
 # from unicodedata import normalize
 from flask import Flask, render_template, redirect, url_for, flash, request
 from dotenv import load_dotenv
+from jinja2.filters import do_last
 from psycopg import connect
 from validators import url as validate_url
 from urllib.parse import urlparse
@@ -73,3 +76,16 @@ def show_url(id):
     if url is None:
         return 'URL не найден', 404
     return render_template('url_detail.html', url=url)
+
+
+@app.post('/urls/<int:id>/checks')
+def check_url(id):
+    created_at = datetime.now()
+    with connect(DATABASE_URL) as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                'INSERT INTO url_checks (url_id, created_at) VALUES (%s, %s)',
+                (id, created_at)
+            )
+    flash('Проверка добавлена', 'success')
+    return redirect(url_for('show_url', id=id))

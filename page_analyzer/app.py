@@ -89,7 +89,6 @@ def show_url(id):
 
 @app.post('/urls/<int:url_id>/checks')
 def check_url(url_id):
-    global connection
     with connection.cursor() as cursor:
         # Получаем URL из БД
         cursor.execute('SELECT name FROM urls WHERE id = %s', (url_id,))
@@ -109,7 +108,10 @@ def check_url(url_id):
             h1 = soup.h1.get_text(strip=True) if soup.h1 else ''
             title = soup.title.string.strip() if soup.title else ''
             description_tag = soup.find('meta', attrs={'name': 'description'})
-            description = description_tag['content'].strip() if description_tag and 'content' in description_tag.attrs else ''
+            if description_tag and 'content' in description_tag.attrs:
+                description = description_tag['content'].strip()
+            else:
+                description = ''
 
         except requests.RequestException:
             flash('Произошла ошибка при проверке сайта', 'danger')
@@ -120,7 +122,9 @@ def check_url(url_id):
         # Вставка данных в таблицу url_checks
         cursor.execute(
             '''
-            INSERT INTO url_checks (url_id, status_code, h1, title, description, created_at)
+            INSERT INTO url_checks (
+                url_id, status_code, h1, title, description, created_at
+            )
             VALUES (%s, %s, %s, %s, %s, %s)
             ''',
             (url_id, status_code, h1, title, description, created_at)

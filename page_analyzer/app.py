@@ -1,6 +1,6 @@
 import os
 # from venv import create
-
+import requests
 # from unicodedata import normalize
 from flask import Flask, render_template, redirect, url_for, flash, request
 from dotenv import load_dotenv
@@ -10,6 +10,7 @@ from validators import url as validate_url
 from urllib.parse import urlparse
 from datetime import datetime
 # from page_analyzer import db_manager as db
+from bs4 import BeautifulSoup
 
 load_dotenv()
 
@@ -86,13 +87,45 @@ def show_url(id):
     return render_template('url_detail.html', url=url, checks=checks)
 
 
-@app.post('/urls/<int:id>/checks')
-def check_url(id):
-    created_at = datetime.now()
-    with connection.cursor() as cur:
-        cur.execute(
-            'INSERT INTO url_checks (url_id, created_at) VALUES (%s, %s)',
-            (id, created_at)
+@app.post('/urls/<int:url_id>/checks')
+def check_url(url_id):
+    global connection
+    with connection.cursor() as cursor:
+        # Получаем URL из БД
+        cursor.execute('SELECT name FROM urls WHERE id = %s', (url_id,))
+        url_data = cursor.fetchone()
+
+        if not url_data:
+            flash('URL не найден', 'danger')
+            return redirect(url_for('show_url', url_id=url_id))
+
+        url = url_data[0]
+
+        try:
+            response = requests.get(url, timeout=5)
+            status_code = response.status_code
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            h1 = soup.h1.get_text(strip=True) if soup.h1 else ''
+            title = soup.title.string.strip() if soup.title else ''
+            description_tag = soup.find('meta', attrs={'name': 'description'})
+            description = description_tag['content'].strip() if description_tag and 'content' in description_tag.attrs else ''
+
+        except requests.RequestException:
+            flash('Произошла ошибка при проверке сайта', 'danger')
+            return redirect(url_for('show_url', url_id=url_id))
+
+        created_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        # Вставка данных в таблицу url_checks
+        cursor.execute(
+            '''
+            INSERT INTO url_checks (url_id, status_code, h1, title, description, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s)
+            ''',
+            (url_id, status_code, h1, title, description, created_at)
         )
-    flash('Проверка добавлена', 'success')
-    return redirect(url_for('show_url', id=id))
+        connection.commit()
+
+    flash('Проверка успешно выполнена', 'success')
+    return redirect(url_for('show_url', url_id=url_id))

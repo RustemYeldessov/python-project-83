@@ -20,10 +20,9 @@
          <tbody>
          {% for url in urls %}
             <tr>
-                <td>{{ url[0] }}</td>
                 <td><a href="{{ url_for('show_url', id=url[0]) }}">{{ url[1] }}</a></td>
-                <td>{{ url[2] }}</td>
                 <td>{{ url[3] or '-' }}</td>
+                <td>{{ url[2].strftime('%Y-%m-%d') if url[2] else '' }}</td>
             </tr>
          {% endfor %}
          </tbody>

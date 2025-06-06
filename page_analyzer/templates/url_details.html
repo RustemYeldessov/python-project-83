@@ -35,12 +35,12 @@
         <tbody>
         {% for check in checks %}
         <tr>
-            <td>{{ check[0] }}</td>  <!-- id -->
-            <td>{{ check[2] or '' }}</td>  <!-- status_code -->
-            <td>{{ check[3] or '' }}</td>  <!-- h1 -->
-            <td>{{ check[4] or '' }}</td>  <!-- title -->
-            <td>{{ check[5] or '' }}</td>  <!-- description -->
-            <td>{{ check[6] }}</td>  <!-- created_at -->
+            <td>{{ check[0] }}</td>
+            <td>{{ check[2] or '' }}</td>
+            <td>{{ check[3] or '' }}</td>
+            <td>{{ check[4] or '' }}</td>
+            <td>{{ check[5] or '' }}</td>
+            <td>{{ check[6] }}</td>
         </tr>
         {% endfor %}
         </tbody>

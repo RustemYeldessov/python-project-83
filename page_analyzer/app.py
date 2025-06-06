@@ -60,10 +60,30 @@ def add_url():
 def list_urls():
     with connection.cursor() as cursor:
         cursor.execute(
-            'SELECT id, name, created_at FROM urls ORDER BY id DESC'
+            '''
+            SELECT 
+                urls.id,
+                urls.name,
+                MAX(url_checks.created_at) AS last_check,
+                MAX(url_checks.status_code) AS last_status
+            FROM urls
+            LEFT JOIN url_checks ON urls.id = url_checks.url_id
+            GROUP BY urls.id
+            ORDER BY urls.id DESC;
+            '''
         )
         urls = cursor.fetchall()
-    return render_template('urls.html', urls=urls)
+
+    urls_data = [
+        {
+            'id': row[0],
+            'name': row[1],
+            'last_check': row[2],
+            'last_status': row[3]
+        } for row in urls
+    ]
+
+    return render_template('urls.html', urls=urls_data)
 
 
 @app.route('/urls/<int:id>')
@@ -78,10 +98,21 @@ def show_url(id):
             return 'URL не найден', 404
 
         cursor.execute(
-            'SELECT id, status_code, h1, title, description, created_at '
-            'FROM url_checks WHERE url_id = %s ORDER BY id DESC',
+            '''
+            SELECT 
+                id,
+                status_code,
+                h1,
+                title,
+                description,
+                created_at
+            FROM url_checks
+            WHERE url_id = %s
+            ORDER BY id DESC;
+            ''',
             (id,)
         )
+
         checks = cursor.fetchall()
 
     return render_template('url_detail.html', url=url, checks=checks)
@@ -89,8 +120,8 @@ def show_url(id):
 
 @app.post('/urls/<int:url_id>/checks')
 def check_url(url_id):
+    global connection
     with connection.cursor() as cursor:
-        # Получаем URL из БД
         cursor.execute('SELECT name FROM urls WHERE id = %s', (url_id,))
         url_data = cursor.fetchone()
 
@@ -102,6 +133,7 @@ def check_url(url_id):
 
         try:
             response = requests.get(url, timeout=5)
+            response.raise_for_status()
             status_code = response.status_code
             soup = BeautifulSoup(response.text, 'html.parser')
 

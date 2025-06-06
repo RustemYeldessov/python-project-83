@@ -61,7 +61,7 @@ def list_urls():
     with connection.cursor() as cursor:
         cursor.execute(
             '''
-            SELECT 
+            SELECT
                 urls.id,
                 urls.name,
                 MAX(url_checks.created_at) AS last_check,
@@ -99,7 +99,7 @@ def show_url(id):
 
         cursor.execute(
             '''
-            SELECT 
+            SELECT
                 id,
                 status_code,
                 h1,
@@ -120,7 +120,6 @@ def show_url(id):
 
 @app.post('/urls/<int:url_id>/checks')
 def check_url(url_id):
-    global connection
     with connection.cursor() as cursor:
         cursor.execute('SELECT name FROM urls WHERE id = %s', (url_id,))
         url_data = cursor.fetchone()

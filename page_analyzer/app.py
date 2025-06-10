@@ -2,7 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
-from flask import Flask, render_template, redirect, url_for, flash, request, Blueprint
+from flask import Flask, render_template, redirect, url_for, flash, request
 from validators import url as validate_url
 from urllib.parse import urlparse
 from datetime import datetime
@@ -131,7 +131,10 @@ def check_url(url_id):
 
                 h1 = soup.h1.get_text(strip=True) if soup.h1 else ''
                 title = soup.title.string.strip() if soup.title else ''
-                description_tag = soup.find('meta', attrs={'name': 'description'})
+                description_tag = soup.find(
+                    'meta',
+                    attrs={'name': 'description'}
+                )
                 if description_tag and 'content' in description_tag.attrs:
                     description = description_tag['content'].strip()
                 else:
@@ -157,6 +160,6 @@ def check_url(url_id):
         flash('Проверка успешно выполнена', 'success')
         return redirect(url_for('show_url', id=url_id))
 
-    except Exception as e:
+    except Exception:
         flash('Непредвиденная ошибка', 'danger')
         return redirect(url_for('show_url', id=url_id))

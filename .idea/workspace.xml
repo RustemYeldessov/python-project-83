@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/page_analyzer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page_analyzer/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_analyzer/routes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748452449165</updated>
-      <workItem from="1749562256483" duration="9003000" />
+      <workItem from="1749562256483" duration="9410000" />
     </task>
     <servers />
   </component>

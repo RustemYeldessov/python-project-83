@@ -3,7 +3,7 @@ from validators import url as validate_url
 from flask import flash
 
 
-def is_vadid_url(url:str) -> bool:
+def is_vadid_url(url: str) -> bool:
     if not url:
         flash('URL не может быть пустым', 'danger')
         return False

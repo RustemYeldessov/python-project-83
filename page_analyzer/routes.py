@@ -8,6 +8,7 @@ from psycopg import connect
 app = Flask(__name__)
 connection = connect(os.getenv('DATABASE_URL'), autocommit=True)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')

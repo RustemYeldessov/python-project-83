@@ -17,3 +17,6 @@ build:
 
 lint:
 	uv run ruff check page_analyzer
+
+flake8:
+	uv run flake8 page_analyzer

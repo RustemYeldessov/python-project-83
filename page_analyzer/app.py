@@ -1,6 +1,5 @@
 import os
 import requests
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, url_for, flash, request
 from validators import url as validate_url
@@ -9,11 +8,22 @@ from datetime import datetime
 from psycopg import connect
 
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv('.env.dev')
+except ModuleNotFoundError:
+    pass
+
 
 app = Flask(__name__)
+
 app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
 connection = connect(os.getenv('DATABASE_URL'), autocommit=True)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/urls', methods=['POST'])

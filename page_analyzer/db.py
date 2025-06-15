@@ -12,7 +12,7 @@ def clone(conn):
     conn.close()
 
 
-def execute_in_database(with_commit: bool=False):
+def execute_in_database(with_commit: bool = False):
     """
     Need connect as first argument and cursor
 
@@ -44,6 +44,7 @@ def execute_in_database(with_commit: bool=False):
         return inner
 
     return decorator
+
 
 @execute_in_database(with_commit=True)
 def insert_url(conn, url, cursor=None):
@@ -87,6 +88,7 @@ def get_url_checks(conn, url_id, cursor):
         (url_id,)
     )
     return cursor.fetchall()
+
 
 @execute_in_database()
 def get_urls_with_last_check(conn, cursor):

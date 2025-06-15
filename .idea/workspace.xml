@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/page_analyzer/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page_analyzer/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_analyzer/page_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/page_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_analyzer/utils/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/utils/validators.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +132,7 @@
       <workItem from="1749919894485" duration="3000" />
       <workItem from="1749919907643" duration="284000" />
       <workItem from="1749920203333" duration="2967000" />
-      <workItem from="1749967696554" duration="2064000" />
+      <workItem from="1749967696554" duration="5692000" />
     </task>
     <servers />
   </component>

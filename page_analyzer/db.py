@@ -8,7 +8,7 @@ def connect_database(app):
     return psycopg2.connect(app.config['DATABASE_URL'])
 
 
-def clone(conn):
+def close(conn):
     conn.close()
 
 

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/page_analyzer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page_analyzer/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_analyzer/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_analyzer/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_analyzer/utils/validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +74,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/page_analyzer" />
+      <recent name="$PROJECT_DIR$/page_analyzer/utils" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,7 +97,42 @@
       <option name="presentableId" value="Default" />
       <updated>1748452449165</updated>
       <workItem from="1749562256483" duration="11113000" />
-      <workItem from="1749731909813" duration="1012000" />
+      <workItem from="1749731909813" duration="1934000" />
+      <workItem from="1749734014111" duration="93000" />
+      <workItem from="1749734111492" duration="327000" />
+      <workItem from="1749734441689" duration="468000" />
+      <workItem from="1749734912913" duration="54000" />
+      <workItem from="1749734969567" duration="165000" />
+      <workItem from="1749735137391" duration="46000" />
+      <workItem from="1749735194444" duration="163000" />
+      <workItem from="1749735359700" duration="43000" />
+      <workItem from="1749735405447" duration="15000" />
+      <workItem from="1749735422678" duration="121000" />
+      <workItem from="1749735546495" duration="28000" />
+      <workItem from="1749735576861" duration="47000" />
+      <workItem from="1749735626171" duration="23000" />
+      <workItem from="1749735651322" duration="34000" />
+      <workItem from="1749735688489" duration="36000" />
+      <workItem from="1749735726361" duration="108000" />
+      <workItem from="1749735862304" duration="130000" />
+      <workItem from="1749735997743" duration="526000" />
+      <workItem from="1749736527044" duration="8000" />
+      <workItem from="1749736537491" duration="4000" />
+      <workItem from="1749736543428" duration="8000" />
+      <workItem from="1749736558797" duration="59000" />
+      <workItem from="1749736619958" duration="43000" />
+      <workItem from="1749736664924" duration="1222000" />
+      <workItem from="1749829443196" duration="4858000" />
+      <workItem from="1749907232816" duration="1000" />
+      <workItem from="1749907255959" duration="922000" />
+      <workItem from="1749918952589" duration="129000" />
+      <workItem from="1749919097081" duration="645000" />
+      <workItem from="1749919752897" duration="54000" />
+      <workItem from="1749919817152" duration="75000" />
+      <workItem from="1749919894485" duration="3000" />
+      <workItem from="1749919907643" duration="284000" />
+      <workItem from="1749920203333" duration="2967000" />
+      <workItem from="1749967696554" duration="1204000" />
     </task>
     <servers />
   </component>

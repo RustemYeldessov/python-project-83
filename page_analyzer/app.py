@@ -1,6 +1,4 @@
 import os
-from http.client import responses
-
 import page_analyzer.db as db
 import requests
 from flask import (
@@ -12,12 +10,8 @@ from flask import (
     request,
     abort)
 from validators import url as validate_url
-from urllib.parse import urlparse
-from datetime import datetime
-from psycopg import connect
-
 from page_analyzer.page_checker import extract_page_data
-from page_analyzer.utils.validators import normalize_url, is_valid_url
+from page_analyzer.utils.validators import normalize_url
 
 try:
     from dotenv import load_dotenv

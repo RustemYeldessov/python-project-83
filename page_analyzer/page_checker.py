@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from requests import Response
 
 
-def extract_page_data(url_response: Response ):
+def extract_page_data(url_response: Response):
 
     soup = BeautifulSoup(url_response.text, 'html.parser')
 

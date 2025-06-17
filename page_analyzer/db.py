@@ -55,10 +55,11 @@ def insert_url(conn, url, cursor=None):
 
 
 @execute_in_database()
-def get_url(conn, url_id, cursor):
+def get_url(conn, cursor=None):
     cursor.execute(
-        'SELECT * FROM urls WHERE id=(%s);', (url_id,)
+        'SELECT * FROM urls'
     )
+    return cursor.fetchone()
 
 
 @execute_in_database()
@@ -76,9 +77,8 @@ def insert_check(conn, url_id, url_info, cursor):
         'h1, title, description) '
         'VALUES (%s, %s, %s, %s, %s);',
         (url_id, url_info['status_code'], url_info['h1'],
-         url_info['tilte'], url_info['description'])
+         url_info['title'], url_info['description'])
     )
-    return cursor.fetchall()
 
 
 @execute_in_database()
@@ -94,11 +94,11 @@ def get_url_checks(conn, url_id, cursor):
 def get_urls_with_last_check(conn, cursor):
     cursor.execute(
         'SELECT DISTINCT ON (urls.id) '
-        'urls.if AS id, '
+        'urls.id AS id, '
         'url_checks.id AS check_id, '
         'url_checks.status_code AS status_code, '
         'url_checks.created_at AS created_at, '
-        'urls.name AS name, '
+        'urls.name AS name '
         'FROM urls '
         'LEFT JOIN url_checks ON urls.id=url_checks.url_id '
         'ORDER BY urls.id DESC, check_id DESC;'

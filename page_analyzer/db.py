@@ -1,5 +1,4 @@
 import psycopg2
-# from psycopg2 import connect
 from psycopg2.extras import NamedTupleCursor
 from functools import wraps
 

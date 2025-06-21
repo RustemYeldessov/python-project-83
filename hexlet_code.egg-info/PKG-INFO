@@ -7,3 +7,4 @@ Requires-Dist: flask
 Requires-Dist: python-dotenv
 Requires-Dist: gunicorn
 Requires-Dist: psycopg2-binary<3.0.0,>=2.9.9
+Requires-Dist: validators<1.0.0,>=0.22.0

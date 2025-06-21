@@ -8,7 +8,8 @@ dependencies = [
     "flask",
     "python-dotenv",
     "gunicorn",
-    "psycopg2-binary>=2.9.9,<3.0.0"
+    "psycopg2-binary>=2.9.9,<3.0.0",
+    "validators>=0.22.0,<1.0.0"
 ]
 requires-python = ">=3.10"
 

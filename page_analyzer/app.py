@@ -15,7 +15,7 @@ from page_analyzer.utils.validators import normalize_url
 
 try:
     from dotenv import load_dotenv
-    load_dotenv('.env.dev')
+    load_dotenv()
 except ModuleNotFoundError:
     pass
 
@@ -58,7 +58,7 @@ def add_url():
     validation_error = validate_url(normal_url)
     if validation_error:
         flash(validation_error, 'danger')
-        return render_template('index.html', 422)
+        return render_template('index.html'), 422
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)
@@ -66,7 +66,7 @@ def add_url():
         flash('Страница уже существует', 'info')
         url_id = existed_url.id
     else:
-        flash('Страница успещно добавлена', 'success')
+        flash('Страница успешно добавлена', 'success')
         url_id = db.insert_url(conn, normal_url)
 
     db.close()

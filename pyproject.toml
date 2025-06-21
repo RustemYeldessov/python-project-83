@@ -7,19 +7,11 @@ version = "0.1.0"
 dependencies = [
     "flask",
     "python-dotenv",
-    "gunicorn"
+    "gunicorn",
+    "psycopg2-binary>=2.9.9,<3.0.0"
 ]
 requires-python = ">=3.10"
 
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-Flask = "^2.3.2"
-gunicorn = "^21.2.0"
-requests = "^2.31.0"
-validators = "^0.22.0"
-python-dotenv = "^1.0.0"
-psycopg = { extras = ["binary"], version = "^3.1.18" }

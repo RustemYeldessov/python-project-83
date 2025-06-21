@@ -1,1 +1,6 @@
 .env
+hexlet_code.egg-info
+.idea
+requirements.txt
+pycache
+.DS_Store

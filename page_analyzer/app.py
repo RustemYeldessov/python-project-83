@@ -22,7 +22,7 @@ except ModuleNotFoundError:
 
 app = Flask(__name__)
 
-app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = os.getenv('SECRET_KEY', 'default-secret')
 app.config["DATABASE_URL"] = os.getenv('DATABASE_URL')
 
 

@@ -54,11 +54,14 @@ def show_url_page(url_id):
 @app.post('/urls/')
 def add_url():
     url = request.form.get('url')
+    if not url:
+        flash('URL обязателен', 'danger')
+        return redirect(url_for('index'))
+
     normal_url = normalize_url(url)
-    validation_error = validate_url(normal_url)
-    if validation_error:
-        flash(validation_error, 'danger')
-        return render_template('index.html'), 422
+    if not validate_url(normal_url):  # Используйте валидатор правильно!
+        flash('Некорректный URL', 'danger')
+        return redirect(url_for('index'))
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)
@@ -66,8 +69,8 @@ def add_url():
         flash('Страница уже существует', 'info')
         url_id = existed_url.id
     else:
-        flash('Страница успешно добавлена', 'success')
         url_id = db.insert_url(conn, normal_url)
+        flash('Страница успешно добавлена', 'success')
 
     db.close(conn)
     return redirect(url_for('show_url_page', url_id=url_id))

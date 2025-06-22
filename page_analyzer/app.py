@@ -69,7 +69,7 @@ def add_url():
         flash('Страница успешно добавлена', 'success')
         url_id = db.insert_url(conn, normal_url)
 
-    db.close()
+    db.close(conn)
     return redirect(url_for('show_url_page', url_id=url_id))
 
 

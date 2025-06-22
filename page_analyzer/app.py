@@ -70,7 +70,7 @@ def add_url():
         url_id = db.insert_url(conn, normal_url)
 
     db.close(conn)
-    return redirect(url_for('show_url_page', url_id=url_id))
+    return redirect(url_for('urls'))
 
 
 @app.post('/urls/<int:url_id>/checks')

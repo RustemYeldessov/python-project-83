@@ -1,3 +1,4 @@
+.venv/
 .env
 hexlet_code.egg-info
 .idea

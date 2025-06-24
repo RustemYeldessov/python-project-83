@@ -57,7 +57,7 @@ def add_url():
 
     if not is_valid_url(normal_url):
         flash('Некорректный URL', 'danger')
-        return redirect(url_for('show_urls_page'))
+        return redirect('/urls')
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)

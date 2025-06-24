@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexlet_code.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexlet_code.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexlet_code.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexlet_code.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexlet_code.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RustemYeldessov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RustemYeldessov/python-project-83.git&quot;,
+    &quot;accountId&quot;: &quot;deb7e853-27eb-4926-9c4e-fcd081be4a8b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;18726cff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2xjXRZ05TcMvTM6D2JWuYRQwZn1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/page_analyzer/templates" />
+      <recent name="$PROJECT_DIR$/page_analyzer/templates/urls" />
+      <recent name="$PROJECT_DIR$/page_analyzer" />
+      <recent name="$PROJECT_DIR$/page_analyzer/utils" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5aae268-ba8f-4e18-9ddf-9c0a04535440" name="Changes" comment="" />
+      <created>1748452449165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748452449165</updated>
+      <workItem from="1749562256483" duration="11113000" />
+      <workItem from="1749731909813" duration="1934000" />
+      <workItem from="1749734014111" duration="93000" />
+      <workItem from="1749734111492" duration="327000" />
+      <workItem from="1749734441689" duration="468000" />
+      <workItem from="1749734912913" duration="54000" />
+      <workItem from="1749734969567" duration="165000" />
+      <workItem from="1749735137391" duration="46000" />
+      <workItem from="1749735194444" duration="163000" />
+      <workItem from="1749735359700" duration="43000" />
+      <workItem from="1749735405447" duration="15000" />
+      <workItem from="1749735422678" duration="121000" />
+      <workItem from="1749735546495" duration="28000" />
+      <workItem from="1749735576861" duration="47000" />
+      <workItem from="1749735626171" duration="23000" />
+      <workItem from="1749735651322" duration="34000" />
+      <workItem from="1749735688489" duration="36000" />
+      <workItem from="1749735726361" duration="108000" />
+      <workItem from="1749735862304" duration="130000" />
+      <workItem from="1749735997743" duration="526000" />
+      <workItem from="1749736527044" duration="8000" />
+      <workItem from="1749736537491" duration="4000" />
+      <workItem from="1749736543428" duration="8000" />
+      <workItem from="1749736558797" duration="59000" />
+      <workItem from="1749736619958" duration="43000" />
+      <workItem from="1749736664924" duration="1222000" />
+      <workItem from="1749829443196" duration="4858000" />
+      <workItem from="1749907232816" duration="1000" />
+      <workItem from="1749907255959" duration="922000" />
+      <workItem from="1749918952589" duration="129000" />
+      <workItem from="1749919097081" duration="645000" />
+      <workItem from="1749919752897" duration="54000" />
+      <workItem from="1749919817152" duration="75000" />
+      <workItem from="1749919894485" duration="3000" />
+      <workItem from="1749919907643" duration="284000" />
+      <workItem from="1749920203333" duration="2967000" />
+      <workItem from="1749967696554" duration="7089000" />
+      <workItem from="1750088856657" duration="5613000" />
+      <workItem from="1750174896174" duration="4415000" />
+      <workItem from="1750500247535" duration="2251000" />
+      <workItem from="1750517027765" duration="4802000" />
+      <workItem from="1750771577058" duration="125000" />
+      <workItem from="1750771717697" duration="761000" />
+      <workItem from="1750774376630" duration="2285000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

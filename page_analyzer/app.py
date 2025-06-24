@@ -9,7 +9,6 @@ from flask import (
     flash,
     request,
     abort)
-from validators import url as validate_url
 from page_analyzer.page_checker import extract_page_data
 from page_analyzer.url_utils import normalize_url, is_valid_url
 

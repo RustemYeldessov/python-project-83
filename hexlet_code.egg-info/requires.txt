@@ -1,6 +1,0 @@
-flask
-python-dotenv
-gunicorn
-psycopg2-binary<3.0.0,>=2.9.9
-validators<1.0.0,>=0.22.0
-beautifulsoup4<5.0.0,>=4.12.0

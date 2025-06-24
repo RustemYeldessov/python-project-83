@@ -11,7 +11,7 @@ from flask import (
     abort)
 from validators import url as validate_url
 from page_analyzer.page_checker import extract_page_data
-from page_analyzer.utils.validators import normalize_url
+from page_analyzer.utils.url_utils import normalize_url
 
 try:
     from dotenv import load_dotenv

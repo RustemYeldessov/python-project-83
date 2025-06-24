@@ -56,7 +56,6 @@ def add_url():
     normal_url = normalize_url(url)
 
     if not is_valid_url(normal_url):
-        flash('Некорректный URL', 'danger')
         return render_template('urls.html'), 422
 
     conn = db.connect_database(app)

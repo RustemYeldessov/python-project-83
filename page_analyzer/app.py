@@ -11,7 +11,7 @@ from flask import (
     abort)
 from validators import url as validate_url
 from page_analyzer.page_checker import extract_page_data
-from page_analyzer.url_utils import normalize_url
+from page_analyzer.url_utils import normalize_url, is_valid_url
 
 try:
     from dotenv import load_dotenv
@@ -56,9 +56,9 @@ def add_url():
     url = request.form.get('url')
     normal_url = normalize_url(url)
 
-    if not validate_url(normal_url):
+    if not is_valid_url(normal_url):
         flash('Некорректный URL', 'danger')
-        return render_template('index.html'), 422
+        return redirect(url_for('index'))
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)

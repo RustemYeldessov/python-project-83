@@ -51,7 +51,7 @@ def show_url_page(url_id):
     return render_template('urls/detail.html', url=url, checks=checks)
 
 
-@app.post('/urls/')
+@app.post('/urls')
 def add_url():
     url = request.form.get('url')
     normal_url = normalize_url(url)
@@ -61,8 +61,7 @@ def add_url():
         conn = db.connect_database(app)
         urls = db.get_urls_with_last_check(conn)
         db.close(conn)
-        html = render_template('urls.html', url=url, urls=urls)
-        return Response(html, status=422)
+        return render_template('urls.html', urls=urls, url=url), 422
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)

@@ -8,7 +8,8 @@ from flask import (
     url_for,
     flash,
     request,
-    abort)
+    abort,
+    Response)
 from page_analyzer.page_checker import extract_page_data
 from page_analyzer.url_utils import normalize_url, is_valid_url
 
@@ -57,10 +58,11 @@ def add_url():
 
     if not is_valid_url(normal_url):
         flash('Некорректный URL', 'danger')
-        conn = db.connect_database(app)  # ← нужно здесь!
+        conn = db.connect_database(app)
         urls = db.get_urls_with_last_check(conn)
         db.close(conn)
-        return render_template('urls.html', url=url, urls=urls), 422
+        html = render_template('urls.html', url=url, urls=urls)
+        return Response(html, status=422)
 
     conn = db.connect_database(app)
     existed_url = db.check_url_exists(conn, normal_url)

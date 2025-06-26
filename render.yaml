@@ -4,7 +4,9 @@ services:
     env: python
     plan: free
     region: oregon
-    buildCommand: uv pip install .
+    buildCommand: |
+      uv venv
+      uv pip install -e .
     startCommand: uv venv exec gunicorn --bind 0.0.0.0:10000 "app:app"
     envVars:
       - key: FLASK_ENV

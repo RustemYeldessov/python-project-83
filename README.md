@@ -17,5 +17,4 @@ git clone https://github.com/твоя_ссылка.git
 cd python-project-83
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
 make run  # или python3 -m gunicorn page_analyzer.app:app

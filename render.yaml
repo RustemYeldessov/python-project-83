@@ -1,3 +1,15 @@
-build:
-  buildCommand: uv pip install --system
-  startCommand: uv venv exec flask run --host=0.0.0.0 --port=10000
+services:
+  - type: web
+    name: page-analyzer
+    env: python
+    plan: free
+    region: frankfurt
+    buildCommand: uv pip install --system
+    startCommand: uv venv exec flask run --host=0.0.0.0 --port=10000
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: 3x@mpl3_S3cr3t_K3y_123
+      - key: DATABASE_URL
+        value: postgresql://page_analyzer_db_or8o_user:0H3wD353Dui1zMFKPNMPQLxVJeXJnGtl@dpg-d0uu6hmmcj7s73el8jsg-a.oregon-postgres.render.com/page_analyzer_db_or8o

@@ -3,7 +3,7 @@ services:
     name: page-analyzer
     env: python
     plan: free
-    region: frankfurt
+    region: oregon
     buildCommand: uv pip install --system ./
     startCommand: uv venv exec flask run --host=0.0.0.0 --port=10000
     envVars:

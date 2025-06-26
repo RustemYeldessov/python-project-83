@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     region: frankfurt
-    buildCommand: uv pip install --system
+    buildCommand: uv pip install --system ./
     startCommand: uv venv exec flask run --host=0.0.0.0 --port=10000
     envVars:
       - key: FLASK_ENV
